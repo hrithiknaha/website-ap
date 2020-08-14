@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<h1>Hello</h1>, document.getElementById('app'));
+import Main from './components/Main';
+
+import './styles/styles.scss';
+
+ReactDOM.render(<Main />, document.getElementById('app'));
 
 if (module.hot) {
 	module.hot.accept();
