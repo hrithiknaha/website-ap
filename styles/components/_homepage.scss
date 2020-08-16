@@ -18,6 +18,14 @@
 			font-family: 'Amatic SC', cursive;
 			letter-spacing: 0.3em;
 			font-weight: 700;
+
+			@include atSmall {
+				width: 100%;
+				left: 0;
+				text-align: center;
+				font-size: 2em;
+				top: 18em;
+			}
 		}
 
 		&_nav {
@@ -29,6 +37,13 @@
 			grid-gap: 1em;
 			font-size: 1.5em;
 			font-family: 'Open Sans Condensed', sans-serif;
+
+			@include atSmall {
+				left: 0;
+				text-align: center;
+				width: 100%;
+			}
+
 			> a {
 				color: white;
 			}
