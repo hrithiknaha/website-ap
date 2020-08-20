@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeBody = () => {
 	return (
 		<div id='about' className='homebody'>
 			<p>
-				When I m not outside with my rucksack, I love working for
-				WordPress. I find it a great platform to express my thoughts.
+				When I m not outside with my rucksack, I love writing my blogs.
+				I find it a great platform to express my thoughts.
 			</p>
 			<p>
 				I live in Kolkata, with my family. My favorite things in life
@@ -26,11 +27,11 @@ const HomeBody = () => {
 				and get scared by lizards. But, I wish them good luck!
 			</p>
 
-			<a href='/blogs'>
+			<Link to='/blogs'>
 				<button class='homebody-button ui green button'>
 					Read my blogs
 				</button>
-			</a>
+			</Link>
 		</div>
 	);
 };
