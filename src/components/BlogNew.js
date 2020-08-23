@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { projectFirestore } from '../firebase/config';
+import Editor from 'react-medium-editor';
 
-import RichTextEditor from './RichTextEditor';
+require('medium-editor/dist/css/medium-editor.css');
+require('medium-editor/dist/css/themes/default.css');
+
+// ES module
 
 const BlogNew = () => {
 	const [title, setTitle] = useState();
@@ -40,7 +44,13 @@ const BlogNew = () => {
 					rows='10'
 					placeholder='Story goes here...'
 				></textarea> */}
-				<RichTextEditor handleBodyChange={handleBodyChange} />
+
+				<Editor
+					className='blog-new_body'
+					text={body}
+					onChange={handleBodyChange}
+				/>
+
 				<button class='ui button' type='submit'>
 					Submit
 				</button>
