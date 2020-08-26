@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { projectFirestore } from '../firebase/config';
 
+import Blog from './Blog';
+
 const Blogs = () => {
 	const [blogs, setBlogs] = useState([]);
 
@@ -12,10 +14,16 @@ const Blogs = () => {
 			querySnapshot.forEach((doc) => {
 				tempDoc.push({ id: doc.id, ...doc.data() });
 			});
-			console.log(tempDoc);
+			setBlogs(tempDoc);
 		});
 	}, []);
-	return <div>Test</div>;
+	return (
+		<div>
+			{blogs.map((blog) => {
+				return <Blog key={blog.id} blog={blog} />;
+			})}
+		</div>
+	);
 };
 
 export default Blogs;
