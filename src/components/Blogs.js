@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Blog = () => {
+import { projectFirestore } from '../firebase/config';
+
+import Blog from './Blog';
+
+const Blogs = () => {
+	const [blogs, setBlogs] = useState([]);
+
+	useEffect(() => {
+		const events = projectFirestore.collection('blogs');
+		events.get().then((querySnapshot) => {
+			const tempDoc = [];
+			querySnapshot.forEach((doc) => {
+				tempDoc.push({ id: doc.id, ...doc.data() });
+			});
+			setBlogs(tempDoc);
+		});
+	}, []);
 	return (
-		<div className='ui container'>
-			<h1>Hello</h1>
+		<div>
+			{blogs.map((blog) => {
+				return <Blog key={blog.id} blog={blog} />;
+			})}
 		</div>
 	);
 };
 
-export default Blog;
+export default Blogs;
