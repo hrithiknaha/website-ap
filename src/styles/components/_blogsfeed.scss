@@ -1,0 +1,14 @@
+.blogs {
+	&-feed {
+		&__title {
+			width: 30%;
+			margin: 1em auto 1em auto;
+			padding-bottom: 0.5em;
+			font-size: 3em;
+			text-align: center;
+			font-family: 'Tangerine', cursive;
+			border-bottom: 1px solid red;
+			// font-weight: 300;
+		}
+	}
+}

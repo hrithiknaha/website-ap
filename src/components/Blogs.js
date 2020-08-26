@@ -18,7 +18,8 @@ const Blogs = () => {
 		});
 	}, []);
 	return (
-		<div>
+		<div className='blogs-feed ui container'>
+			<div className='blogs-feed__title'>For your Perusal</div>
 			{blogs.map((blog) => {
 				return <Blog key={blog.id} blog={blog} />;
 			})}

@@ -1,0 +1,20 @@
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 70%;
+	width: 50%;
+	margin: 2em auto;
+
+	&-details {
+		text-align: center;
+		font-family: 'Alegreya SC', serif;
+		font-size: 1.3em;
+		width: 60%;
+		margin: 4em auto;
+
+		&__title {
+			padding-bottom: 1em;
+			border-bottom: 1px solid grey;
+		}
+	}
+}

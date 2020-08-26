@@ -3,12 +3,12 @@ import parse from 'html-react-parser';
 
 const Blog = (props) => {
 	return (
-		<div className='ui card'>
-			<div class='card'>
-				<div class='content'>
-					<div class='header'>{props.blog.title}</div>
-					<div class='description'>{parse(props.blog.body)}</div>
-				</div>
+		<div className='blog'>
+			<div className='blog-photo'>
+				<img src='https://source.unsplash.com/random/300x300' alt='' />
+			</div>
+			<div className='blog-details'>
+				<div className='blog-details__title'>{props.blog.title}</div>
 			</div>
 		</div>
 	);
