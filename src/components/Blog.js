@@ -5,7 +5,7 @@ const Blog = (props) => {
 	return (
 		<Link
 			to={{
-				pathname: `/blogs/${props.blog.id}`,
+				pathname: `/blog/${props.blog.id}`,
 				state: {
 					blog: props.blog
 				}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { projectFirestore } from '../firebase/config';
+import { projectFirestore, timestamp } from '../firebase/config';
 import Editor from 'react-medium-editor';
 
 require('medium-editor/dist/css/medium-editor.css');
@@ -22,9 +22,11 @@ const BlogNew = () => {
 	const handleSubmit = (e) => {
 		console.log('Submitting');
 		e.preventDefault();
+		const created = timestamp();
 		projectFirestore.collection('blogs').add({
 			title,
-			body
+			body,
+			created
 		});
 	};
 

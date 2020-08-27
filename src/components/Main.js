@@ -13,7 +13,7 @@ const Main = () => {
 				<Route exact path='/blogs' component={Blogs} />
 				<Route exact path='/' component={HomePage} />
 				<Route exact path='/blog/new' component={BlogNew} />
-				<Route path='/blogs/:id' component={BlogExpanded} />
+				<Route path='/blog/:id' component={BlogExpanded} />
 			</Switch>
 		</BrowserRouter>
 	);
