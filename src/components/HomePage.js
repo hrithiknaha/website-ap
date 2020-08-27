@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import HomeBody from './HomeBody';
 
+import heroImage from '../assets/hero-image.jpg';
+
 const HomePage = () => {
 	return (
 		<div>
@@ -18,10 +20,7 @@ const HomePage = () => {
 						<p>ABOUT ME</p>
 					</Link>
 				</div>
-				<img
-					src='https://source.unsplash.com/random/1600x900'
-					alt='Home image background image'
-				/>
+				<img src={heroImage} alt='Home image background image' />
 				<p>ADITI PANDEY</p>
 			</div>
 			<HomeBody />
