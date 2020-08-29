@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { projectFirestore } from '../firebase/config';
 
 import Blog from './Blog';
+import Navbar from './Navbar';
 
 const Blogs = () => {
 	const [blogs, setBlogs] = useState([]);
@@ -18,11 +19,14 @@ const Blogs = () => {
 		});
 	}, []);
 	return (
-		<div className='blogs-feed ui container'>
-			<div className='blogs-feed__title'>For your Perusal</div>
-			{blogs.map((blog) => {
-				return <Blog key={blog.id} blog={blog} />;
-			})}
+		<div>
+			<Navbar />
+			<div className='blogs-feed ui container'>
+				<div className='blogs-feed__title'>For your Perusal</div>
+				{blogs.map((blog) => {
+					return <Blog key={blog.id} blog={blog} />;
+				})}
+			</div>
 		</div>
 	);
 };

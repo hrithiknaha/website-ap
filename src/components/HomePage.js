@@ -16,9 +16,9 @@ const HomePage = () => {
 					<Link to='/blogs'>
 						<p>BLOGS</p>
 					</Link>
-					<Link to='#about'>
+					{/* <Link to='#about'>
 						<p>ABOUT ME</p>
-					</Link>
+					</Link> */}
 				</div>
 				<img src={heroImage} alt='Home image background image' />
 				<p>ADITI PANDEY</p>

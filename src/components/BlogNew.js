@@ -7,7 +7,7 @@ require('medium-editor/dist/css/themes/default.css');
 
 // ES module
 
-const BlogNew = () => {
+const BlogNew = (props) => {
 	const [title, setTitle] = useState();
 	const [body, setBody] = useState();
 
@@ -28,34 +28,31 @@ const BlogNew = () => {
 			body,
 			created
 		});
+		props.history.push(`/`);
 	};
 
 	return (
 		<div className='ui container'>
 			<form onSubmit={handleSubmit}>
+				<button
+					class='blog-new_button ui right floated tiny green button'
+					type='submit'
+				>
+					Submit
+				</button>
 				<input
 					className='blog-new_title'
 					type='text'
 					name='title'
 					placeholder='Title'
 					onChange={handleTitleChange}
+					required
 				/>
-				{/* <textarea
-					className='blog-new_body'
-					name='body'
-					rows='10'
-					placeholder='Story goes here...'
-				></textarea> */}
-
 				<Editor
 					className='blog-new_body'
 					text={body}
 					onChange={handleBodyChange}
 				/>
-
-				<button class='ui button' type='submit'>
-					Submit
-				</button>
 			</form>
 		</div>
 	);
