@@ -5,6 +5,22 @@
 	width: 50%;
 	margin: 2em auto;
 
+	@include atSmall {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&-photo > img {
+		width: 300px;
+		height: 300px;
+
+		@include atSmall {
+			width: 200px;
+			height: 200px;
+		}
+	}
+
 	&-details {
 		text-align: center;
 		font-family: 'Alegreya SC', serif;
